@@ -1,34 +1,21 @@
-document.getElementById('postForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+document.getElementById('submitBtn').addEventListener('click', async function () {
+    const title = document.querySelector('.wpahr').value;
+    const content = document.querySelector('.sodyd').value;
+    const date = new Date().toISOString();  // 현재 날짜와 시간을 ISO 형식으로 생성
 
-    const title = e.target.title.value;
-    const content = e.target.content.value;
-    const date = new Date().toISOString();  // 작성 날짜
+    const postData = { title, content, date };
 
-    const postData = {
-        title: title,
-        content: content,
-        date: date
-    };
+    const response = await fetch('https://synonymous-detailed-buffer.glitch.me/addPost', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData)
+    });
 
-    try {
-        const response = await fetch('https://synonymous-detailed-buffer.glitch.me/addPost', {  // Glitch 서버 URL로 수정
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(postData)
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to add post');
-        }
-
-        const result = await response.json();
-        alert('게시글이 추가되었습니다!');
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-        alert('게시글 추가 실패');
+    const result = await response.json();
+    if (result.message) {
+        alert('게시글이 등록되었습니다!');
+        window.location.href = '/';  // 글 등록 후 index.html로 이동
+    } else {
+        alert('게시글 등록에 실패했습니다.');
     }
 });
