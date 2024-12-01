@@ -6,7 +6,7 @@ async function fetchPosts() {
     postsList.innerHTML = posts.map(post => `
         <div class="post">
             <p class="post-number">${post.id}</p>
-            <a href="post.html?id=${post.id}" class="post-title">${post.title}</a>
+            <a href="/post.html?id=${post.id}" class="post-title">${post.title}</a>
             <p class="post-date">${new Date(post.date).toLocaleDateString()}</p>
         </div>
     `).join('');
