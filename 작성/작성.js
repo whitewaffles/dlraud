@@ -12,7 +12,7 @@ document.getElementById('postForm').addEventListener('submit', async function(e)
     };
 
     try {
-        const response = await fetch('https://your-glitch-app-url/addPost', {  // Glitch 서버 URL로 수정
+        const response = await fetch('https://synonymous-detailed-buffer/addPost', {  // Glitch 서버 URL로 수정
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
