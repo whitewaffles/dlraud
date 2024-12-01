@@ -1,32 +1,34 @@
-function submitPost() {
-    const title = document.getElementById("title").value;
-    const content = document.getElementById("content").value;
-    
-    if (title === "" || content === "") {
-        alert("제목과 내용을 입력해주세요.");
-        return;
-    }
+document.getElementById('postForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-    const date = new Date().toISOString();
+    const title = e.target.title.value;
+    const content = e.target.content.value;
+    const date = new Date().toISOString();  // 작성 날짜
 
-    fetch("/addPost", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ title, content, date })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("게시글이 등록되었습니다.");
-            window.location.href = "/index.html";  // 게시글 목록 페이지로 이동
-        } else {
-            alert("게시글 등록에 실패했습니다.");
+    const postData = {
+        title: title,
+        content: content,
+        date: date
+    };
+
+    try {
+        const response = await fetch('https://your-glitch-app-url/addPost', {  // Glitch 서버 URL로 수정
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to add post');
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("오류가 발생했습니다.");
-    });
-}
+
+        const result = await response.json();
+        alert('게시글이 추가되었습니다!');
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+        alert('게시글 추가 실패');
+    }
+});
