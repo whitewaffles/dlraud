@@ -55,6 +55,7 @@ body {
     margin-left: 280px;
 }
 
+/* 게시글 목록 헤더 */
 .header {
     display: flex;
     justify-content: space-between;
@@ -68,13 +69,29 @@ body {
     font-weight: bold;
     color: black;
     margin: 0 10px;
+    text-align: center;
 }
 
+/* 게시글 목록 */
+#posts-list {
+    margin-top: 20px;
+    margin-left: 280px;
+    width: 800px;
+}
+
+/* 게시글 항목 */
 .post {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+.post-number,
+.post-title,
+.post-date {
+    text-align: center;  /* 항목들이 가운데 정렬되도록 */
+    flex: 1;  /* 각 항목이 고르게 공간을 차지하도록 */
 }
 
 .post-number {
