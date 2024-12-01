@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../아이콘.png">
+    <link rel="stylesheet" href="../index.css">
+    <title>게시글 상세</title>
+</head>
+<body>
+    <div>
+        <img src="../아이콘.png" class="icons">
+        <p class="dlrrmf">게시글 상세</p>
+        <div class="line"></div>
+    </div>
+    <div id="post-details">
+        <h1 id="post-title"></h1>
+        <p id="post-date"></p>
+        <p id="post-content"></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        async function fetchPostDetails() {
+            const response = await fetch(`https://synonymous-detailed-buffer.glitch.me/getPost/${postId}`);
+            const post = await response.json();
+
+            if (post.error) {
+                document.getElementById('post-details').innerHTML = `<p>${post.error}</p>`;
+                return;
+            }
+
+            document.getElementById('post-title').textContent = post.title;
+            document.getElementById('post-date').textContent = new Date(post.date).toLocaleString();
+            document.getElementById('post-content').textContent = post.content;
+        }
+
+        fetchPostDetails();
+    </script>
+</body>
+</html>
