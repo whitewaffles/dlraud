@@ -1,6 +1,6 @@
 // 게시글 목록을 가져오는 함수
 function fetchPosts(page = 1) {
-    fetch(`https://your-glitch-project-name.glitch.me/getPosts?page=${page}`)
+    fetch(`https://synonymous-detailed-buffer.glitch.me/getPosts?page=${page}`)
         .then(response => response.json())
         .then(data => {
             const postsList = document.querySelector('#posts-list');
