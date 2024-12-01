@@ -1,5 +1,5 @@
 async function fetchPosts() {
-    const response = await fetch('https://synonymous-detailed-buffer/getPosts');  // Glitch 서버 URL로 수정
+    const response = await fetch('https://synonymous-detailed-buffer.glitch.me/getPosts');  // Glitch 서버 URL로 수정
     const posts = await response.json();
     const postsList = document.getElementById('posts-list');
 
