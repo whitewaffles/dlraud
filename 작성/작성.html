@@ -2,22 +2,23 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../아이콘.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="../아이콘.png" />
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="작성.css">
-    <title>글 작성</title>
+    <title>익글사이트</title>
 </head>
 <body>
     <div>
-        <a href="index.html"><img src="../아이콘.png" class="icons"></a>
+        <a href="../index.html"><img src="../아이콘.png" class="icons"></a>
         <p class="dlrrmf">익글 사이트</p>
+        <p class="dlraud">해당 글은 익명으로 게시됩니다.</p>
         <div class="line"></div>
     </div>
     <div class="qorud">
-        <input class="wpahr" type="text" placeholder="제목" maxlength="35">
-        <textarea class="sodyd" type="text" placeholder="내용"></textarea>
-        <button class="rptl" id="submitBtn">게시</button>
+        <input class="wpahr" type="text" id="title" placeholder="제목" maxlength="35">
+        <textarea class="sodyd" id="content" placeholder="내용"></textarea>
+        <button class="rptl" onclick="submitPost()">게시</button>
     </div>
 
     <script src="작성.js"></script>
