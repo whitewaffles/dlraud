@@ -1,110 +1,96 @@
-/* index.css */
-
 /* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f4;
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
 }
 
-/* 사이트 제목 */
-.dlrrmf {
-    font-size: 32px;
-    margin: 20px 0;
-}
-
-/* 아이콘 이미지 */
 .icons {
-    width: 50px;
-    height: 50px;
-}
-
-/* 구분선 */
-.line {
-    width: 80%;
-    height: 2px;
-    background-color: #ccc;
-    margin: 20px 0;
-}
-
-/* 글 작성하기 버튼 */
-.wkrtjd {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 40px;
     cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.dlrrmf {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: -32px;
+    font-style: italic;
+    font-weight: 900;
+    color: rgb(70, 141, 144);
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(66, 170, 222);
+    margin-top: 20px;
+}
+
+.wkrtjd {
+    width: 320px;
+    height: 30px;
+    background-color: cornflowerblue;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 750px;
+    cursor: pointer;
 }
 
 .wkrtjd:hover {
-    background-color: #45a049;
+    background-color: rgb(61, 122, 235);
 }
 
-/* 게시글 목록의 헤더 스타일 */
+.line2 {
+    background-color: rgb(63, 63, 63);
+    margin-top: 5px;
+    width: 800px;
+    height: 2px;
+    margin-left: 280px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 280px;
+    width: 800px;
 }
 
-/* 각 게시글 항목 스타일 */
 .header-item {
-    flex: 1;
-    text-align: center;
-}
-
-/* 게시글 목록 스타일 */
-#posts-list {
-    width: 80%;
-    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin: 0 10px;
 }
 
 .post {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
     padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-bottom: 1px solid #ccc;
 }
 
-/* 게시글 번호 */
 .post-number {
-    flex: 1;
-    text-align: center;
+    width: 50px;
 }
 
-/* 게시글 제목 */
 .post-title {
-    flex: 3;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
     text-decoration: none;
+    color: black;
+    width: 500px;
 }
 
-/* 게시글 날짜 */
+.post-title:hover {
+    color: cornflowerblue;
+}
+
 .post-date {
-    flex: 2;
-    text-align: center;
-    color: #666;
-}
-
-/* 게시글 제목 상하 가운데 정렬 */
-.post-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 150px;
 }
