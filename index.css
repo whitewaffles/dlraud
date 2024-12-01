@@ -96,7 +96,7 @@ body {
 
 .post-number {
     width: 50px;
-    margin-left: -50px;
+    margin-left: -100px;
 }
 
 .post-title {
@@ -111,5 +111,5 @@ body {
 
 .post-date {
     width: 300px;
-    margin-left: 50px;
+    margin-left: 100px;
 }
