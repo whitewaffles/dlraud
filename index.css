@@ -108,3 +108,63 @@ body {
     text-align: right;
     flex: 1; /* 날짜는 우측 정렬 */
 }
+
+/* 모바일 호환성 추가 */
+@media (max-width: 768px) {
+    .icons {
+        margin: 20px auto;
+        display: block;
+    }
+
+    .dlrrmf {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    .line {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .wkrtjd {
+        width: 90%;
+        height: 40px;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .header-item {
+        margin: 5px 0;
+    }
+
+    #posts-list {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .post {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .post-number,
+    .post-title,
+    .post-date {
+        width: auto;
+        margin: 5px 0;
+    }
+
+    .post-title {
+        word-break: break-word; /* 긴 제목 자동 줄바꿈 */
+    }
+}
