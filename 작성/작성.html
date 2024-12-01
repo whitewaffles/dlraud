@@ -2,22 +2,19 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="icon" href="../아이콘.png" />
-    <link rel="stylesheet" href="../index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../아이콘.png">
     <link rel="stylesheet" href="작성.css">
-    <title>익글사이트</title>
+    <title>게시글 작성</title>
 </head>
 <body>
     <div>
-        <img src="../아이콘.png" class="icons">
-        <p class="dlrrmf">익글 사이트</p>
-        <div class="line"></div>
-    </div>
-    <div class="qorud">
-        <input class="wpahr" type="text" id="title" placeholder="제목" maxlength="35">
-        <textarea class="sodyd" id="content" placeholder="내용"></textarea>
-        <button class="rptl" onclick="submitPost()">게시</button>
+        <h1>게시글 작성</h1>
+        <form id="postForm">
+            <input type="text" name="title" placeholder="제목" required>
+            <textarea name="content" placeholder="내용" required></textarea>
+            <button type="submit">게시</button>
+        </form>
     </div>
 
     <script src="작성.js"></script>
